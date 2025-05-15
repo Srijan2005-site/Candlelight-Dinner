@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Candlelight Surprise</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1a1a1a;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .welcome {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      animation: fadeIn 3s ease-in-out forwards;
+    }
+    .scene {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+    .characters {
+      font-size: 5rem;
+      margin: 1rem;
+    }
+    .table {
+      font-size: 3rem;
+    }
+    .proposal {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      display: none;
+      animation: fadeIn 2s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://dl.sndup.net/4p92/Yeh%20Raaten%20Yeh%20Mausam%20-%20Sonu%20Nigam.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="welcome" id="welcome">Welcome Madam... Sir is waiting for you.</div>
+
+  <div class="scene" id="scene">
+    <div class="characters">👦❤️🍷🕯️🍷❤️👧</div>
+    <div class="table">A Romantic Candlelight Dinner</div>
+    <div class="characters" id="proposalStep" style="display:none;">👦🕯️👧</div>
+    <div class="proposal" id="proposal">
+      💍 I love you... Will you marry me?
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('welcome').style.display = 'none';
+      const scene = document.getElementById('scene');
+      scene.style.display = 'flex';
+
+      setTimeout(() => {
+        document.getElementById('proposalStep').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('proposal').style.display = 'block';
+        }, 3000);
+      }, 4000);
+    }, 4000);
+  </script>
+</body>
+</html>
